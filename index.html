@@ -35,14 +35,7 @@
 		
 		body, a:hover {cursor: url('http://ani.cursors-4u.net/symbols/sym-8/sym749.cur'), progress !important;}
 		
-		@media (min-width: 1000px) {
-			body {
-				background-size: cover;
-			}
-			body > .dg {
-				display: block;
-			}
-		}
+		
 		
 		h1{
 			color: #e5befd;
@@ -87,6 +80,15 @@
 			position: absolute;
 			font-size: 25px;
 			top: -50px;
+		}
+		
+		@media (min-width: 1000px) {
+			body {
+				background-size: cover;
+			}
+			body > .dg {
+				display: block;
+			}
 		}
 	
 		</style>
@@ -143,7 +145,12 @@
 		var init = function(){	
 			var isMobile = navigator.userAgent && navigator.userAgent.toLowerCase().indexOf('mobile') >= 0;
 			var isSmall = window.innerWidth < 1000;
-			var ps = new ParticleSlider();
+			var ps = new ParticleSlider({
+				ptlGap: isMobile || isSmall ? 3 : 0,
+				ptlSize: isMobile || isSmall ? 3 : 1,
+				width: 1e9,
+				height: 1e9
+			  });
 			ps.$(".draw");
 		}
 		onload = init();
