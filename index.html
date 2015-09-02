@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  	<title>Saheel Wed Jabeen</title>
+  	<title>ღ Saheel ❤ Jabeen ❧</title>
 	<link rel="shortcut icon" href="favicon.ico" />
 	
 	<!-- Bootstrap  -->
@@ -116,14 +116,14 @@
 		
 		
 		<footer>
-			<p class="text-center">
+			<p class="text-center animated zoomIn">
 				On Wednesday evening <br />
 				September the 16<sup>th</sup>, 2015<br />
 				at <strong>7<strong> O'clock
 			</p>
 			<h3>
-				<a href="#" role="button" data-toggle="modal" data-target="#myModal">Royal Function Hall</a>
-				<small>Mysore</small>
+				<a href="#" role="button" class="animated zoomIn" data-toggle="modal" data-target="#myModal">Royal Function Hall</a>
+				<small class="animated zoomIn">Mysore</small>
 			</h3>
 		</footer>
 		
@@ -145,13 +145,18 @@
 		var init = function(){	
 			var isMobile = navigator.userAgent && navigator.userAgent.toLowerCase().indexOf('mobile') >= 0;
 			var isSmall = window.innerWidth < 1000;
-			var ps = new ParticleSlider({
-				ptlGap: isMobile || isSmall ? 3 : 0,
-				ptlSize: isMobile || isSmall ? 3 : 1,
-				width: 1e9,
-				height: 1e9
-			  });
-			ps.$(".draw");
+			
+			if( window.screen.width <= 600 ){
+				var ps = new ParticleSlider({
+					width: 240,
+					height: 240,
+				});
+				ps.$(".draw");
+			}else{
+				var ps = new ParticleSlider();
+				ps.$(".draw");
+			}
+			
 		}
 		onload = init();
 		</script>
